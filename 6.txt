@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h1 id="h1"></h1>
+<button id="btn1" >Click</button>
+<a id="demo"></a> <br/>
+<form><label>NAME:  </label>
+<input type="text" id="input">
+<a id="demo2"></a> <br/>
+<input id="Submit" type="submit">
+<a id="name"></a> <br/>
+</form>
+<script>
+window.onload = Loading()
+var a = document.getElementById("btn1")
+a.addEventListener("click", HelloBtnClicked)
+a.addEventListener("mouseover", HelloMouseOver)
+a.addEventListener("mouseout", HelloMouseOut)
+var txt = document.getElementById("input")
+txt.addEventListener("change",HelloChange)
+var b = document.getElementById("Submit")
+b.addEventListener("submit",HelloSubmit(event))
+function Loading(){
+alert("Page Loaded...");
+}
+function HelloMouseOver(){
+document.getElementById("demo").innerHTML+="HELLO MouseOver <br>";
+}
+function HelloMouseOut(){
+document.getElementById("demo").innerHTML+="HELLO MouseOut <br>";
+}
+function HelloBtnClicked(){
+document.getElementById("demo").innerHTML+="HELLO BtnClicked <br>";
+}
+function HelloChange(){
+document.getElementById("demo2").innerHTML+="HELLO Change <br>";
+}
+function HelloSubmit(e){
+e.preventDefault()document.getElementById("name").innerHTML+="HELLO "+txt.value+ "<br/>";
+}
+</script>
+<button onclick="">
+</button>
+</body>
