@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>creating mailing system</title>
+    <style>
+        legend {
+            display: block;
+            padding-left: 2px;
+            padding-right: 2px;
+            border: none;
+        }
+    </style>
+    <script type="text/javascript">
+        function validate() {
+
+            var user = document.getElementById("e").value;
+            var user2 = document.getElementById("e");
+            var name = document.getElementById("name").value;
+            var name2 = document.getElementById("name");
+            var pass= document.getElementById("pass").value;
+            var pass2 = document.getElementById("pass");
+            var conf= document.getElementById("pass2").value;
+            var phone= document.getElementById("phone").value;
+            var phone2 = document.getElementById("phone");
+            var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            var re2= /^[A-Za-z ]{7,29}$/;
+            var re3= /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+            var re4= /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+            if (re.test(user) && re2.test(name) && re3.test(pass) && (pass===conf) && re4.test(phone)) {
+                alert("done");
+                return true;
+            }
+            else {
+                user2.style.border = "red solid 3px";
+                name2.style.border = "red solid 3px";
+                pass2.style.border = "red solid 3px";
+                phone2.style.border = "red solid 3px";
+                alert('error');
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body bgcolor="cyan">
+    <center>
+        <h1>Email Registration</h1>
+        <form>
+            <fieldset style="width:300px">
+                <legend>Registation Form</legend>
+                <table>
+                    <tr>
+                        <input type="text"
+                            placeholder="firstname"
+                            maxlength="10" id="name">
+                    </tr>
+                    <br><br>
+                    
+                    <tr>
+                        <input type="email"
+                            placeholder="username@gmail.com" id="e">
+                    </tr>
+                    <br><br>
+                    <tr>
+                        <input type="password" placeholder="password" id="pass">
+                    </tr>
+                    <br><br>
+                    <tr>
+                        <input type="password" placeholder="confirm" id="pass2">
+                    </tr>
+                    <br><br>
+                    <tr>
+                        <input type="text" placeholder="contact" id="phone">
+                    </tr>
+                    <br><br>
+                    <tr>
+                        <label>Gender:</label>
+                        <select id="gender">
+                            <option value="male">male</option>
+                            <option value="female">female</option>
+                            <option value="others">others</option>
+                        </select>
+                    </tr>
+                    <br><br>
+                    <tr><input type="submit"
+                        onclick="validate()" value="create">
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+    </center>
+</body>
+
+</html>
