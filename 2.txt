@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Nav tag</title>
+</head>
+<style>
+body{
+height: 150vh;
+margin-top:80px;
+padding:50px;
+font-family: Arial;
+}
+header{
+background-color:#000000;
+position:fixed;
+left:0;
+right:0;
+top:5px;
+height: 40px;
+display:flex;
+align-items:center;
+box-shadow: 0px 0px 10px 0px;
+}
+header *{
+display: inline;
+}
+header li{
+margin: 20px;
+}
+header li a{
+color:white;
+text-decoration:none;
+}
+</style>
+<body>
+<header>
+<nav>
+<ul>
+<li><a href="#">HOME</a>
+<li> <a href="#">ABOUT</a>
+<li> <a href="#">CONTACT</a>
+<li> <a href="#">SERVICES</a>
+<li> <a href="#">JOIN US</a>
+</ul>
+</nav>
+</header>
+Welcome to navigation tag page.
+</body>
+</html>
