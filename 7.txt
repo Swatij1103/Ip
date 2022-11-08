@@ -1,0 +1,58 @@
+app.js:
+import React from 'react';
+
+import {Component} from 'react';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
+import Home from './Components/Home';
+
+import About from './Components/About';
+
+import User from './Components/User';
+
+import Counter from './Components/Counter';
+
+import './App.css';
+
+class App extends Component { render(){
+
+return(
+
+<>
+
+<Router>
+
+<Routes>
+
+<Route path="/" element={<Home />} />
+
+<Route path="/About" element={<About />} />
+
+<Route path="/User" element={<User />} />
+
+<Route path="/Counter" element={<Counter />} />
+
+</Routes>
+
+</Router>
+
+</>
+
+);
+
+}
+
+}
+
+export default App;
+
+import React from 'react';
+
+function About(){
+
+return <p><h1>About section</h1></p>
+
+}
+
+export default About;
