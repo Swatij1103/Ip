@@ -1,0 +1,21 @@
+<html>
+<body>
+<form action="http://127.0.0.1:8081/process_get" method="GET">
+FirstName:<inputtype="text"name="first_name"><br>
+LastName:<inputtype="text"name="last_name">
+<inputtype="submit"value="Submit">
+</form>
+</body>
+</html>
+
+Express
+var express = require('express');
+var app = express();
+app.use(express.static('public'));
+app.get('/index.html', function (req, res) {
+res.sendFile(dirname+"/"+"index.html");
+})
+app.get('/process_get', function (req, res) {
+response={first_name:req.query.first_name,last_name:req.query.last_name};
+console.log(response);res.end(JSON.stringify(response));
+})
